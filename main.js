@@ -19,8 +19,9 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     document.getElementById('successMessage').style.display = 'block';
 });
 
+// Add to Cart functionality
 document.querySelectorAll('.product-item button').forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', function() {
         const productName = button.parentElement.getAttribute('data-name');
         alert(`${productName} added to cart!`);
     });

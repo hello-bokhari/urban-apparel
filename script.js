@@ -69,11 +69,12 @@ cartIcon.addEventListener('mouseenter', () => {
 cartDropdown.addEventListener('mouseenter', () => {
     cartDropdown.classList.add('show');  // Prevents closing when hovering over the dropdown
 });
-
+/*
+//cause problem when hovering. Dose not let the user to interact with the cart drop down
 cartIcon.addEventListener('mouseleave', () => {
     cartDropdown.classList.remove('show');
 });
-
+*/
 cartDropdown.addEventListener('mouseleave', () => {
     cartDropdown.classList.remove('show');  // Closes when mouse leaves the dropdown
 });
@@ -105,17 +106,41 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
       }
   
       updateCart();
-       // Show confirmation for 2 seconds
-       const confirmation = document.createElement('div');
-       confirmation.className = 'cart-confirmation';
-       confirmation.textContent = `${productName} added to cart!`;
-       document.body.appendChild(confirmation);
+
+      // Show confirmation for 2 seconds
+      const confirmation = document.createElement('div');
+      confirmation.className = 'cart-confirmation';
+      confirmation.textContent = `${productName} added to cart!`;
+      document.body.appendChild(confirmation);
   
       setTimeout(() => {
         confirmation.remove();
       }, 2000);
     });
   });
+
+// Add clear cart functionality
+function clearCart() {
+    cartItems = []; // Empty the cart array
+    localStorage.removeItem('cartItems'); // Remove from localStorage
+    updateCart(); // Update UI to reflect the cleared cart
+
+    // Show confirmation for 2 seconds
+    const confirmation = document.createElement('div');
+    confirmation.className = 'cart-confirmation';
+    confirmation.textContent = `Cart has been cleared!`;
+    document.body.appendChild(confirmation);
+    setTimeout(() => {
+        confirmation.remove();
+      }, 2000);
+}
+
+// Attach the clear cart functionality to the button
+document.getElementById('clearCartButton').addEventListener('click', function() {
+    clearCart();
+
+});
+
 
 // Initialize cart on page load
 updateCart();

@@ -18,7 +18,7 @@
                 <a href="#">Contact</a>
             </div>
         </div>
-        <div class="title">Urban Apparel</div>
+        <div class="title"><a href="index.html" style="color: inherit; text-decoration: none;">Urban Apparel</a></div>
         <div class="cart-container">
             <div class="cart" id="cartIcon">
                 <i class="fas fa-shopping-cart"></i>
@@ -44,8 +44,15 @@
 
         <!-- Product Sections -->
         <div class="products">
-            <h2>Products</h2>
-
+            <h2>Our Products</h2>
+            <!-- To make filtering easy, add buttons to navigate between categories: -->
+            <div class="category-filters">
+                <button onclick="showCategory('shirts')">Shirts</button>
+                <button onclick="showCategory('pants')">Pants</button>
+                <button onclick="showCategory('hoodies')">Hoodies</button>
+                <!-- Show All Button -->
+                <button onclick="showAllCategories()">Show All</button>
+            </div>
             <!-- Shirts Section -->
             <h3>Shirts</h3>
             <div class="product-list" id="productListShirts">

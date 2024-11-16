@@ -188,6 +188,7 @@ cartDropdown.addEventListener('click', (event) => {
     event.stopPropagation(); // Prevent the click from propagating to the document
 });
 */
+
 //add inline product scroll function
 // Select all product carousel containers
 const carousels = document.querySelectorAll('.product-carousel-container');
@@ -223,6 +224,81 @@ carousels.forEach((container) => {
     // Initialize button states
     updateButtonState();
 });
+
+
+// Function to show products based on category
+function showCategory(category) {
+    // Hide all category headings first
+    const allCategoryHeadings = document.querySelectorAll('.products h3');
+    allCategoryHeadings.forEach(heading => {
+        heading.style.display = 'none';
+    });
+
+    // Hide all product lists
+    const allProductLists = document.querySelectorAll('.product-list');
+    allProductLists.forEach(list => {
+        list.style.display = 'none';
+    });
+
+    // Show the selected category's product list
+    const selectedCategory = document.getElementById('productList' + capitalizeFirstLetter(category));
+    if (selectedCategory) {
+        selectedCategory.style.display = 'block';
+    }
+
+    // Show the category heading for the selected category
+    const selectedCategoryHeading = getCategoryHeadingText(capitalizeFirstLetter(category));
+    if (selectedCategoryHeading) {
+        selectedCategoryHeading.style.display = 'block';
+    }
+}
+
+// Function to show all product categories (products and headings)
+function showAllCategories() {
+    const allProductLists = document.querySelectorAll('.product-list');
+    allProductLists.forEach(list => {
+        list.style.display = 'block';
+    });
+
+    // Also show all category headings when "Show All" is selected
+    const allCategoryHeadings = document.querySelectorAll('.products h3');
+    allCategoryHeadings.forEach(heading => {
+        heading.style.display = 'block';
+    });
+}
+
+// Function to get the category heading element by category name
+function getCategoryHeadingText(category) {
+    const allHeadings = document.querySelectorAll('.products h3');
+    for (let heading of allHeadings) {
+        if (heading.textContent.trim().toLowerCase() === category.toLowerCase()) {
+            return heading;  // Return the heading element
+        }
+    }
+    return null; // Return null if no heading matches
+}
+
+// Capitalizes the first letter of a string (e.g., 'shirts' to 'Shirts')
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+// Event listeners for category filter buttons
+document.querySelectorAll('.category-filters button').forEach(button => {
+    button.addEventListener('click', (event) => {
+        const category = event.target.textContent.toLowerCase();
+        if (category === 'show all') {
+            showAllCategories();
+        } else {
+            showCategory(category);
+        }
+    });
+});
+
+
+
+
+
 
 
 // Initialize cart on page load

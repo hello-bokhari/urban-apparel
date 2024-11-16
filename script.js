@@ -29,7 +29,19 @@ document.addEventListener('click', function(event) {
 // Handle the contact form submission
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    document.getElementById('successMessage').style.display = 'block';
+    
+    // Show confirmation for 2 seconds
+    const confirmation = document.createElement('div');
+    confirmation.className = 'cart-confirmation';
+    confirmation.textContent = `Thankyou for contacting us!`;
+    document.body.appendChild(confirmation);
+
+    setTimeout(() => {
+      confirmation.remove();
+    }, 2000);
+
+    // Clear the form after submission
+    document.getElementById('contactForm').reset();  // This resets all form fields
 });
 
 // Update the cart dropdown

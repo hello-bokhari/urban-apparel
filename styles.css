@@ -160,7 +160,7 @@ body {
     position: absolute;
     right: 20px;
     bottom: 80px;
-    background-color: white;
+    background-color: black;
     border: 1px solid #ddd;
     width: 250px;
     padding: 10px;
@@ -196,7 +196,7 @@ body {
     bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #28a745;
+    background-color: black;
     color: white;
     padding: 10px;
     border-radius: 5px;

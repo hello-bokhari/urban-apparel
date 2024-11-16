@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Urban Apparel</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="header">
+        <div class="menu">
+            <i class="fas fa-bars" onclick="toggleMenu()"></i>
+            <span>Menu</span>
+            <div class="menu-content" id="menuContent">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="title">Urban Apparel</div>
+        <div class="cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Cart</span>
+        </div>
+    </div>
+    
+    <div class="main-content">
+        <div class="carousel" id="carousel">
+            <img alt="Red cotton t-shirt" class="active" height="300" src="https://storage.googleapis.com/a1aa/image/nl34VHvtrVJOPdnJMVunKgmvOPEtXFPEzdFXfvUsEdSApx4JA.jpg" width="800"/>
+            <img alt="Blue jeans" class="hidden" height="300" src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" width="800"/>
+            <img alt="Black hoodie" class="hidden" height="300" src="https://storage.googleapis.com/a1aa/image/Xvm1TBXm9bquDRr9Z2UwfffadIarPjd8iZsjkZR7dDj8jGjnA.jpg" width="800"/>
+        </div>
+        <div class="products">
+            <h2>Products</h2>
+            <h3>Shirts</h3>
+            <div class="product-list" id="productListShirts">
+                <!-- Product items will go here -->
+            </div>
+            <h3>Pants</h3>
+            <div class="product-list" id="productListPants">
+                <!-- Product items will go here -->
+            </div>
+            <h3>Hoodies</h3>
+            <div class="product-list" id="productListHoodies">
+                <!-- Product items will go here -->
+            </div>
+        </div>
+        <div class="contact-form">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <input placeholder="Name" type="text" required/>
+                <input placeholder="Email" type="email" required/>
+                <textarea placeholder="Message" rows="5" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            <div id="successMessage" style="display:none;">Thank you for contacting us!</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2023 Urban Apparel. All rights reserved.</p>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

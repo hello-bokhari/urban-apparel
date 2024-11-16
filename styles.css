@@ -90,20 +90,14 @@ body {
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
 }
 
-.dot {
-    width: 10px;
-    height: 10px;
+.carousel-indicators button {
+    background-color: #fff;
+    border: 1px solid #333;
+    padding: 5px;
     margin: 0 5px;
-    background-color: white;
-    border-radius: 50%;
     cursor: pointer;
-}
-
-.active-dot {
-    background-color: #717171;
 }
 
 .products {
@@ -112,26 +106,24 @@ body {
 
 .product-list {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
 }
 
 .product-item {
     width: 200px;
-    border: 2px solid black;
-    padding: 10px;
+    margin: 10px;
     text-align: center;
-    background-color: #fff;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .product-item img {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-.product-item h4 {
-    margin-top: 10px;
+    height: auto;
+    border-radius: 5px;
 }
 
 .product-item button {
@@ -141,8 +133,63 @@ body {
     border: none;
     cursor: pointer;
     margin-top: 10px;
+    border-radius: 5px;
 }
 
+.product-item button:hover {
+    background-color: #444;
+}
+
+.cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cart:hover {
+    background-color: #444;
+}
+
+.cart-dropdown {
+    position: absolute;
+    right: 20px;
+    bottom: 80px;
+    background-color: white;
+    border: 1px solid #ddd;
+    width: 250px;
+    padding: 10px;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cart-dropdown h3 {
+    margin-top: 0;
+}
+
+.cart-dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.cart-dropdown ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+.cart .cart-dropdown.show {
+    display: block;
+}
 .contact-form {
     margin-top: 40px;
 }
@@ -183,12 +230,11 @@ body {
         flex-direction: column;
         text-align: center;
     }
-    
+
     .product-list {
         flex-direction: column;
         align-items: center;
     }
-    
     .carousel img {
         height: auto;
     }
@@ -197,4 +243,5 @@ body {
         width: 80%;
         margin-bottom: 20px;
     }
+    
 }

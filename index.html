@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Urban Apparel</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <link href="style.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
     <div class="header">
@@ -19,9 +19,16 @@
             </div>
         </div>
         <div class="title">Urban Apparel</div>
-        <div class="cart">
+        <div class="cart" id="cartIcon">
             <i class="fas fa-shopping-cart"></i>
             <span>Cart</span>
+            <div id="cartDropdown" class="cart-dropdown">
+                <h3>Shopping Cart</h3>
+                <ul id="cartItemsList">
+                    <li>No items in cart</li>
+                </ul>
+                <button id="checkoutBtn">Checkout</button>
+            </div>
         </div>
     </div>
     
@@ -43,13 +50,13 @@
                     <img src="https://storage.googleapis.com/a1aa/image/nl34VHvtrVJOPdnJMVunKgmvOPEtXFPEzdFXfvUsEdSApx4JA.jpg" alt="Red Cotton Shirt"/>
                     <h4>Red Cotton Shirt</h4>
                     <p>$19.99</p>
-                    <button>Add to Cart</button>
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
                 <div class="product-item" data-name="Blue Denim Shirt">
                     <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Blue Denim Shirt"/>
                     <h4>Blue Denim Shirt</h4>
                     <p>$24.99</p>
-                    <button>Add to Cart</button>
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
 
@@ -60,13 +67,13 @@
                     <img src="https://storage.googleapis.com/a1aa/image/Xvm1TBXm9bquDRr9Z2UwfffadIarPjd8iZsjkZR7dDj8jGjnA.jpg" alt="Black Skinny Jeans"/>
                     <h4>Black Skinny Jeans</h4>
                     <p>$39.99</p>
-                    <button>Add to Cart</button>
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
                 <div class="product-item" data-name="Grey Chinos">
                     <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Grey Chinos"/>
                     <h4>Grey Chinos</h4>
                     <p>$29.99</p>
-                    <button>Add to Cart</button>
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
 
@@ -77,13 +84,13 @@
                     <img src="https://storage.googleapis.com/a1aa/image/Xvm1TBXm9bquDRr9Z2UwfffadIarPjd8iZsjkZR7dDj8jGjnA.jpg" alt="Black Hoodie"/>
                     <h4>Black Hoodie</h4>
                     <p>$49.99</p>
-                    <button>Add to Cart</button>
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
                 <div class="product-item" data-name="Grey Hoodie">
                     <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Grey Hoodie"/>
                     <h4>Grey Hoodie</h4>
                     <p>$44.99</p>
-                    <button>Add to Cart</button>
+                    <button class="add-to-cart">Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -105,6 +112,6 @@
         <p>© 2023 Urban Apparel. All rights reserved.</p>
     </div>
 
-    <script src="main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

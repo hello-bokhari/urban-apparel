@@ -108,16 +108,18 @@ body {
 .product-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; /* Centering the items */
+    gap: 20px; /* Spacing between product cards */
 }
 
 .product-item {
-    width: 200px;
+    width: 250px;
     margin: 10px;
     text-align: center;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 10px;
+    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -138,7 +140,11 @@ body {
 }
 
 .product-item button:hover {
-    background-color: #444;
+    background-color: var(--button-hover-color);
+}
+
+.product-item:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
 }
 
 .cart {

@@ -19,16 +19,18 @@
             </div>
         </div>
         <div class="title">Urban Apparel</div>
-        <div class="cart" id="cartIcon">
-            <i class="fas fa-shopping-cart"></i>
-            <span>Cart</span>
-            <div id="cartDropdown" class="cart-dropdown">
-                <h3>Shopping Cart</h3>
-                <ul id="cartItemsList">
-                    <li>No items in cart</li>
-                </ul>
-                <button id="checkoutBtn">Checkout</button>
-                <button id="clearCartButton">Clear Cart</button>
+        <div class="cart-container">
+            <div class="cart" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Cart</span>
+                <div id="cartDropdown" class="cart-dropdown">
+                    <h3>Shopping Cart</h3>
+                    <ul id="cartItemsList">
+                        <li>No items in cart</li>
+                    </ul>
+                    <button id="checkoutBtn">Checkout</button>
+                    <button id="clearCartButton">Clear Cart</button>
+                </div>
             </div>
         </div>
     </div>
@@ -47,51 +49,177 @@
             <!-- Shirts Section -->
             <h3>Shirts</h3>
             <div class="product-list" id="productListShirts">
-                <div class="product-item" data-name="Red Cotton Shirt">
-                    <img src="https://storage.googleapis.com/a1aa/image/nl34VHvtrVJOPdnJMVunKgmvOPEtXFPEzdFXfvUsEdSApx4JA.jpg" alt="Red Cotton Shirt"/>
-                    <h4>Red Cotton Shirt</h4>
-                    <p>$19.99</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-                <div class="product-item" data-name="Blue Denim Shirt">
-                    <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Blue Denim Shirt"/>
-                    <h4>Blue Denim Shirt</h4>
-                    <p>$24.99</p>
-                    <button class="add-to-cart">Add to Cart</button>
+                <div class="product-carousel-container">
+                    <button class="scroll-btn left-btn">←</button>
+                    <div class="product-carousel">
+                        <div class="product-item" data-name="Red Cotton Shirt">
+                            <img src="https://storage.googleapis.com/a1aa/image/nl34VHvtrVJOPdnJMVunKgmvOPEtXFPEzdFXfvUsEdSApx4JA.jpg" alt="Red Cotton Shirt"/>
+                            <h4>Red Cotton Shirt</h4>
+                            <p>$19.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Blue Denim Shirt">
+                            <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Blue Denim Shirt"/>
+                            <h4>Blue Denim Shirt</h4>
+                            <p>$24.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Blue Denim Shirt">
+                            <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Blue Denim Shirt"/>
+                            <h4>Blue Denim Shirt</h4>
+                            <p>$24.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Blue Denim Shirt">
+                            <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Blue Denim Shirt"/>
+                            <h4>Blue Denim Shirt</h4>
+                            <p>$24.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Blue Denim Shirt">
+                            <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Blue Denim Shirt"/>
+                            <h4>Blue Denim Shirt</h4>
+                            <p>$24.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Red Cotton Shirt">
+                            <img src="https://storage.googleapis.com/a1aa/image/nl34VHvtrVJOPdnJMVunKgmvOPEtXFPEzdFXfvUsEdSApx4JA.jpg" alt="Red Cotton Shirt"/>
+                            <h4>Red Cotton Shirt</h4>
+                            <p>$19.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Red Cotton Shirt">
+                            <img src="https://storage.googleapis.com/a1aa/image/nl34VHvtrVJOPdnJMVunKgmvOPEtXFPEzdFXfvUsEdSApx4JA.jpg" alt="Red Cotton Shirt"/>
+                            <h4>Red Cotton Shirt</h4>
+                            <p>$19.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Red Cotton Shirt">
+                            <img src="https://storage.googleapis.com/a1aa/image/nl34VHvtrVJOPdnJMVunKgmvOPEtXFPEzdFXfvUsEdSApx4JA.jpg" alt="Red Cotton Shirt"/>
+                            <h4>Red Cotton Shirt</h4>
+                            <p>$19.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                    </div>
+                    <button class="scroll-btn right-btn">→</button>
                 </div>
             </div>
 
             <!-- Pants Section -->
             <h3>Pants</h3>
             <div class="product-list" id="productListPants">
-                <div class="product-item" data-name="Black Skinny Jeans">
-                    <img src="https://storage.googleapis.com/a1aa/image/Xvm1TBXm9bquDRr9Z2UwfffadIarPjd8iZsjkZR7dDj8jGjnA.jpg" alt="Black Skinny Jeans"/>
-                    <h4>Black Skinny Jeans</h4>
-                    <p>$39.99</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-                <div class="product-item" data-name="Grey Chinos">
-                    <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Grey Chinos"/>
-                    <h4>Grey Chinos</h4>
-                    <p>$29.99</p>
-                    <button class="add-to-cart">Add to Cart</button>
+                <div class="product-carousel-container">
+                    <button class="scroll-btn left-btn">←</button>
+                    <div class="product-carousel">
+                        <div class="product-item" data-name="Black Skinny Jeans">
+                            <img src="https://storage.googleapis.com/a1aa/image/Xvm1TBXm9bquDRr9Z2UwfffadIarPjd8iZsjkZR7dDj8jGjnA.jpg" alt="Black Skinny Jeans"/>
+                            <h4>Black Skinny Jeans</h4>
+                            <p>$39.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Grey Chinos">
+                            <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Grey Chinos"/>
+                            <h4>Grey Chinos</h4>
+                            <p>$29.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Black Skinny Jeans">
+                            <img src="https://storage.googleapis.com/a1aa/image/Xvm1TBXm9bquDRr9Z2UwfffadIarPjd8iZsjkZR7dDj8jGjnA.jpg" alt="Black Skinny Jeans"/>
+                            <h4>Black Skinny Jeans</h4>
+                            <p>$39.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Grey Chinos">
+                            <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Grey Chinos"/>
+                            <h4>Grey Chinos</h4>
+                            <p>$29.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Black Skinny Jeans">
+                            <img src="https://storage.googleapis.com/a1aa/image/Xvm1TBXm9bquDRr9Z2UwfffadIarPjd8iZsjkZR7dDj8jGjnA.jpg" alt="Black Skinny Jeans"/>
+                            <h4>Black Skinny Jeans</h4>
+                            <p>$39.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Grey Chinos">
+                            <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Grey Chinos"/>
+                            <h4>Grey Chinos</h4>
+                            <p>$29.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Black Skinny Jeans">
+                            <img src="https://storage.googleapis.com/a1aa/image/Xvm1TBXm9bquDRr9Z2UwfffadIarPjd8iZsjkZR7dDj8jGjnA.jpg" alt="Black Skinny Jeans"/>
+                            <h4>Black Skinny Jeans</h4>
+                            <p>$39.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Grey Chinos">
+                            <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Grey Chinos"/>
+                            <h4>Grey Chinos</h4>
+                            <p>$29.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <button class="scroll-btn right-btn">→</button>
+                    </div>
                 </div>
             </div>
 
             <!-- Hoodies Section -->
             <h3>Hoodies</h3>
             <div class="product-list" id="productListHoodies">
-                <div class="product-item" data-name="Black Hoodie">
-                    <img src="https://storage.googleapis.com/a1aa/image/Xvm1TBXm9bquDRr9Z2UwfffadIarPjd8iZsjkZR7dDj8jGjnA.jpg" alt="Black Hoodie"/>
-                    <h4>Black Hoodie</h4>
-                    <p>$49.99</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-                <div class="product-item" data-name="Grey Hoodie">
-                    <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Grey Hoodie"/>
-                    <h4>Grey Hoodie</h4>
-                    <p>$44.99</p>
-                    <button class="add-to-cart">Add to Cart</button>
+                <div class="product-carousel-container">
+                    <button class="scroll-btn left-btn">←</button>
+                    <div class="product-carousel">
+                        <div class="product-item" data-name="Black Hoodie">
+                            <img src="https://storage.googleapis.com/a1aa/image/Xvm1TBXm9bquDRr9Z2UwfffadIarPjd8iZsjkZR7dDj8jGjnA.jpg" alt="Black Hoodie"/>
+                            <h4>Black Hoodie</h4>
+                            <p>$49.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Grey Hoodie">
+                            <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Grey Hoodie"/>
+                            <h4>Grey Hoodie</h4>
+                            <p>$44.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Black Hoodie">
+                            <img src="https://storage.googleapis.com/a1aa/image/Xvm1TBXm9bquDRr9Z2UwfffadIarPjd8iZsjkZR7dDj8jGjnA.jpg" alt="Black Hoodie"/>
+                            <h4>Black Hoodie</h4>
+                            <p>$49.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Grey Hoodie">
+                            <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Grey Hoodie"/>
+                            <h4>Grey Hoodie</h4>
+                            <p>$44.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Black Hoodie">
+                            <img src="https://storage.googleapis.com/a1aa/image/Xvm1TBXm9bquDRr9Z2UwfffadIarPjd8iZsjkZR7dDj8jGjnA.jpg" alt="Black Hoodie"/>
+                            <h4>Black Hoodie</h4>
+                            <p>$49.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Grey Hoodie">
+                            <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Grey Hoodie"/>
+                            <h4>Grey Hoodie</h4>
+                            <p>$44.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Black Hoodie">
+                            <img src="https://storage.googleapis.com/a1aa/image/Xvm1TBXm9bquDRr9Z2UwfffadIarPjd8iZsjkZR7dDj8jGjnA.jpg" alt="Black Hoodie"/>
+                            <h4>Black Hoodie</h4>
+                            <p>$49.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <div class="product-item" data-name="Grey Hoodie">
+                            <img src="https://storage.googleapis.com/a1aa/image/qUeLA65LXTTbVqy2egHE34eoN9LaeFAvmDRyDzhuBziGINGPB.jpg" alt="Grey Hoodie"/>
+                            <h4>Grey Hoodie</h4>
+                            <p>$44.99</p>
+                            <button class="add-to-cart">Add to Cart</button>
+                        </div>
+                        <button class="scroll-btn right-btn">→</button>
+                    </div>
                 </div>
             </div>
         </div>

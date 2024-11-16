@@ -103,13 +103,57 @@ body {
 
 .products {
     padding: 20px;
+    align-items: center;
 }
 
 .product-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Prevent wrapping of items to the next line */
+    overflow-x: auto; /* Allow horizontal scrolling */
     justify-content: center; /* Centering the items */
     gap: 20px; /* Spacing between product cards */
+    padding-bottom: 40px;
+    position: relative;
+    z-index: 0;
+}
+
+.product-carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden; /* Prevent products from overflowing the container */
+}
+
+.product-carousel {
+    display: flex;
+    gap: 10px; /* Add space between products */
+    overflow-x: auto;
+    scroll-behavior: smooth; /* Smooth scrolling effect */
+    scrollbar-width: none; /* Hide scrollbar (Firefox) */
+}
+
+.product-carousel::-webkit-scrollbar {
+    display: none; /* Hide scrollbar (Chrome, Safari) */
+}
+
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.left-btn {
+    left: 10px;
+}
+
+.right-btn {
+    right: 10px;
 }
 
 .product-item {
@@ -121,6 +165,9 @@ body {
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0; /* Prevent the item from shrinking */
+    position: relative; /* Needed for z-index to work */
+    z-index: 1; /* Lower than cart dropdown */
 }
 
 .product-item img {
@@ -145,6 +192,12 @@ body {
 
 .product-item:hover {
     transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.cart-container {
+    position: relative; /* Establish a stacking context */
+    z-index: 1000; /* Higher than product cards */
+    display: inline-block;
 }
 
 .cart {
@@ -173,6 +226,7 @@ body {
     padding: 10px;
     display: none;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* Higher z-index to ensure it's above other elements */
 }
 
 .cart-dropdown h3 {

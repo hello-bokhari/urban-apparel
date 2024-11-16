@@ -153,6 +153,78 @@ document.getElementById('clearCartButton').addEventListener('click', function() 
 
 });
 
+//solving cart hover stuck problem
+const cartContainer = document.querySelector('.cart-container');
+// Variables to manage hover state
+let hoverTimeout;
+
+// Add event listeners for mouse enter and leave
+cartContainer.addEventListener('mouseenter', () => {
+    clearTimeout(hoverTimeout); // Cancel any pending timeout
+    cartDropdown.style.display = 'block'; // Show the dropdown
+});
+
+cartContainer.addEventListener('mouseleave', () => {
+    hoverTimeout = setTimeout(() => {
+        cartDropdown.style.display = 'none'; // Hide the dropdown after a delay
+    }, 200); // Adjust delay to avoid flickering
+});
+
+/*
+// Toggle the dropdown when the cart icon is clicked
+cartIcon.addEventListener('click', (event) => {
+    event.stopPropagation(); // Prevent the click from propagating to the document
+    cartDropdown.style.display = cartDropdown.style.display === 'block' ? 'none' : 'block';
+});
+
+
+// Close the dropdown when clicking outside of it
+document.addEventListener('click', () => {
+    cartDropdown.style.display = 'none';
+});
+
+// Prevent clicks inside the dropdown from closing it
+cartDropdown.addEventListener('click', (event) => {
+    event.stopPropagation(); // Prevent the click from propagating to the document
+});
+*/
+//add inline product scroll function
+// Select all product carousel containers
+const carousels = document.querySelectorAll('.product-carousel-container');
+
+carousels.forEach((container) => {
+    const carousel = container.querySelector('.product-carousel');
+    const leftButton = container.querySelector('.left-btn');
+    const rightButton = container.querySelector('.right-btn');
+
+    // Scroll amount per click
+    const scrollAmount = 300;
+
+    // Add event listeners to buttons
+    leftButton.addEventListener('click', () => {
+        carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    rightButton.addEventListener('click', () => {
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+
+    // Optional: Disable buttons at the ends of the carousel
+    function updateButtonState() {
+        leftButton.disabled = carousel.scrollLeft === 0;
+        rightButton.disabled =
+            carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth;
+    }
+
+    // Update button state on scroll and resize
+    carousel.addEventListener('scroll', updateButtonState);
+    window.addEventListener('resize', updateButtonState);
+
+    // Initialize button states
+    updateButtonState();
+});
+
 
 // Initialize cart on page load
 updateCart();
+

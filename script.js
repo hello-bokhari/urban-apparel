@@ -16,6 +16,15 @@ function toggleMenu() {
     menuContent.classList.toggle('show');
 }
 
+//close the menu when clicking outside
+document.addEventListener('click', function(event) {
+    const menuContent = document.getElementById('menuContent');
+    if (!menuContent.contains(event.target) && !event.target.matches('.fas.fa-bars')) {
+        menuContent.classList.remove('show');
+    }
+});
+
+
 // Handle the contact form submission
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -55,5 +64,15 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
         const productName = button.parentElement.getAttribute('data-name');
         cartItems.push(productName);
         updateCart();
+
+        // Show confirmation for 2 seconds
+        const confirmation = document.createElement('div');
+        confirmation.className = 'cart-confirmation';
+        confirmation.textContent = `${productName} added to cart!`;
+        document.body.appendChild(confirmation);
+        
+        setTimeout(() => {
+            confirmation.remove();
+        }, 2000);
     });
 });

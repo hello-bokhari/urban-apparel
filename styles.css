@@ -190,6 +190,20 @@ body {
 .cart .cart-dropdown.show {
     display: block;
 }
+
+.cart-confirmation {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 10;
+}
+
 .contact-form {
     margin-top: 40px;
 }

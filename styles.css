@@ -19,9 +19,14 @@ body {
     align-items: center;
     padding: 10px 20px;
     border-bottom: 2px solid black;
-    position: relative;
     background-color: var(--primary-color);
     color: var(--secondary-color);
+    position: fixed; /* Fixes the header to the top */
+    top: 0; /* Positions it at the very top of the viewport */
+    left: 0; /* Aligns it to the left edge */
+    width: 100%; /* Makes sure it spans the full width of the viewport */
+    z-index: 1000; /* Ensures it stays above other elements */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .header .menu, .header .cart {

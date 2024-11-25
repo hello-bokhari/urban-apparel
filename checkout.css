@@ -154,6 +154,7 @@ h3, h4, h2 {
 .item-price {
     color: #888;
     font-size: 14px;
+    margin-right: 10px;
 }
 
 .item-quantity {
@@ -195,6 +196,7 @@ input[type="number"] {
     cursor: pointer;
     font-size: 14px;
     border-radius: 5px;
+    margin-left: 10px;
 }
 
 .delete-btn:hover {
@@ -253,6 +255,19 @@ input[type]{
 
 .submit-btn:hover {
     background-color: #000000;
+}
+
+.cart-confirmation {
+    position: fixed;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 10;
 }
 
 /* Footer Styling */

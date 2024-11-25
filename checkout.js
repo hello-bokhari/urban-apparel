@@ -12,33 +12,6 @@ document.addEventListener('click', function(event) {
     }
 });
 
-document.getElementById('checkoutForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent form from reloading the page
-
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const address = document.getElementById('address').value.trim();
-    const cardNumber = document.getElementById('cardNumber').value.trim();
-    const expiryDate = document.getElementById('expiryDate').value.trim();
-    const cvv = document.getElementById('cvv').value.trim();
-
-    if (!validateCardDetails(cardNumber, expiryDate, cvv)) {
-        alert("Invalid card details. Please check your information.");
-        return;
-    }
-
-    alert(`Thank you, ${name}! Your order has been placed.`);
-    // Clear the form
-    this.reset();
-});
-
-function validateCardDetails(cardNumber, expiryDate, cvv) {
-    const cardRegex = /^\d{16}$/;
-    const expiryRegex = /^(0[1-9]|1[0-2])\/\d{2}$/; // MM/YY format
-    const cvvRegex = /^\d{3}$/;
-
-    return cardRegex.test(cardNumber) && expiryRegex.test(expiryDate) && cvvRegex.test(cvv);
-}
 // Retrieve cart items from localStorage
 let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
@@ -63,7 +36,7 @@ function renderCartItems() {
         // Quantity control
         const itemQuantity = document.createElement('div');
         itemQuantity.classList.add('item-quantity');
-        itemQuantity.innerHTML = `
+        itemQuantity.innerHTML = ` 
             <button class="decrease-btn" onclick="updateQuantity('${item.name}', -1)">-</button>
             <input type="number" class="quantity" value="${item.quantity}" min="1" readonly />
             <button class="increase-btn" onclick="updateQuantity('${item.name}', 1)">+</button>
@@ -108,14 +81,28 @@ function removeItem(itemName) {
 // Initial render of cart items
 renderCartItems();
 
-// Checkout form submission (you can customize this further)
+// Checkout form submission
 document.getElementById('checkoutForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    alert('Order placed successfully!');
-    // Optionally, you can clear the cart after a successful order
+
+    // Create and show confirmation message for 2 seconds
+    const confirmation = document.createElement('div');
+    confirmation.className = 'cart-confirmation';
+    confirmation.textContent = `Thank you for your order! Your order has been placed.`;
+    document.body.appendChild(confirmation);
+
+    setTimeout(() => {
+        confirmation.remove();
+        // Redirect to index.html after 2 seconds
+        window.location.href = 'index.html';
+    }, 2000);
+
+    //clear the cart after a successful order
     cartItems = [];
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
     renderCartItems();  // Re-render the cart after clearing
-});
 
+    // Clear the form after submission
+    document.getElementById('checkoutForm').reset();  // This resets all form fields
+});
 

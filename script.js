@@ -95,10 +95,15 @@ cartDropdown.addEventListener('mouseleave', () => {
 document.querySelectorAll('.add-to-cart').forEach(button => {
     button.addEventListener('click', function() {
       const productName = button.parentElement.getAttribute('data-name');
-  
+      const productPrice = parseFloat(button.parentElement.getAttribute('data-price')); // Ensure price is a number
       // Check for missing data-name attribute
       if (!productName) {
         console.error("Missing 'data-name' attribute on product element");
+        return;
+      }
+      // Check for missing data-price attribute
+      if (isNaN(productPrice)) {
+        console.error("Missing 'data-price' attribute on product element");
         return;
       }
   
@@ -114,7 +119,7 @@ document.querySelectorAll('.add-to-cart').forEach(button => {
   
       // If not found, add new product to cart
       if (!productFound) {
-        cartItems.push({ name: productName, quantity: 1 });
+        cartItems.push({ name: productName, price: productPrice, quantity: 1 });
       }
   
       updateCart();
@@ -213,8 +218,7 @@ carousels.forEach((container) => {
     // Optional: Disable buttons at the ends of the carousel
     function updateButtonState() {
         leftButton.disabled = carousel.scrollLeft === 0;
-        rightButton.disabled =
-            carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth;
+        rightButton.disabled = carousel.scrollLeft + carousel.offsetWidth >= carousel.scrollWidth;
     }
 
     // Update button state on scroll and resize

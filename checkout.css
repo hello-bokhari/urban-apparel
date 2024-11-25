@@ -163,7 +163,7 @@ h3, h4, h2 {
 }
 
 button {
-    background-color: #5cb85c;
+    background-color: black;
     border: none;
     padding: 5px 10px;
     color: white;
@@ -174,7 +174,7 @@ button {
 }
 
 button:hover {
-    background-color: #4cae4c;
+    background-color: black;
 }
 
 input[type="number"] {
@@ -188,7 +188,7 @@ input[type="number"] {
 
 /* Delete Button */
 .delete-btn {
-    background-color: #d9534f;
+    background-color: #838383;
     color: white;
     padding: 5px 10px;
     border: none;
@@ -198,7 +198,7 @@ input[type="number"] {
 }
 
 .delete-btn:hover {
-    background-color: #c9302c;
+    background-color: #838383;
 }
 
 /* Total Price Section */
@@ -211,7 +211,7 @@ input[type="number"] {
 }
 
 .cart-total span {
-    color: #5cb85c;
+    color: #000000;
 }
 
 /* Checkout Form Styling */
@@ -231,7 +231,7 @@ label {
     margin-bottom: 5px;
 }
 
-input[type="text"] {
+input[type]{
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -240,7 +240,7 @@ input[type="text"] {
 }
 
 .submit-btn {
-    background-color: #5cb85c;
+    background-color: #000000;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -252,7 +252,7 @@ input[type="text"] {
 }
 
 .submit-btn:hover {
-    background-color: #4cae4c;
+    background-color: #000000;
 }
 
 /* Footer Styling */

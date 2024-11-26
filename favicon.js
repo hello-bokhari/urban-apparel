@@ -1,6 +1,6 @@
 // Create a canvas to draw the favicon
 const canvas = document.createElement("canvas");
-canvas.width = 64; // Favicon standard sizes are usually 16x16, 32x32, or 64x64
+canvas.width = 64; 
 canvas.height = 64;
 const context = canvas.getContext("2d");
 
